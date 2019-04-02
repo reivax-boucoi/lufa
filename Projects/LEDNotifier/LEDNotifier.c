@@ -1,13 +1,13 @@
 /*
              LUFA Library
-     Copyright (C) Dean Camera, 2018.
+     Copyright (C) Dean Camera, 2019.
 
   dean [at] fourwalledcubicle [dot] com
            www.lufa-lib.org
 */
 
 /*
-  Copyright 2018  Dean Camera (dean [at] fourwalledcubicle [dot] com)
+  Copyright 2019  Dean Camera (dean [at] fourwalledcubicle [dot] com)
 
   Permission to use, copy, modify, distribute, and sell this
   software and its documentation for any purpose is hereby granted
@@ -134,6 +134,7 @@ int main(void)
 		if (Channel & (1 << 7))
 		  SoftPWM_Channel3_Duty = Duty;
 
+		// cppcheck-suppress IOWithoutPositioning
 		fputc(ColourUpdate, &USBSerialStream);
 
 		CDC_Device_USBTask(&VirtualSerial_CDC_Interface);
